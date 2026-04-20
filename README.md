@@ -12,7 +12,7 @@ where V ( S , t ) is the option price, S is the asset price, t is time, σ is vo
 
 At maturity t = T , the payoff is
 
-V ( S , T ) = max ( S − K , 0 ) ,
+$V ( S , T ) = max ( S − K , 0 )$ ,
 
 where K is the strike price. The boundary conditions are
 
