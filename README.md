@@ -2,10 +2,7 @@
 This project focuses on the numerical solution of the Black–Scholes partial differential equation (PDE) for pricing a European call option. The equation is given by
 
 $$
-\frac{\partial V}{\partial t}
-+ \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2}
-+ r S \frac{\partial V}{\partial S}
-- r V = 0
+\frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - r V = 0
 $$
 
 where $V(S,t)$ is the option price, $S$ is the asset price, $t$ is time, $\sigma$ is volatility, and $r$ is the risk-free rate.
