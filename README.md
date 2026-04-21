@@ -1,4 +1,6 @@
-# MA402-Final-Project
+# MA402 Final Project
+
+## Summary 
 This project focuses on the numerical solution of the Black–Scholes partial differential equation (PDE) for pricing a European call option. The equation is given by
 
 $$
@@ -35,3 +37,7 @@ These systems are assembled as sparse matrices using `petsc4py`, and solved usin
 The solution is computed on a grid in space and time, and the final option price is compared to the exact Black–Scholes formula to check accuracy.
 
 Overall, this project combines finite differences with PETSc to solve a common problem in quantitative finance.
+
+## AI Translation Experience
+
+While the AI provided a useful starting point, the script required significant debugging and modification. I had to fix syntax issues and ensure that the output was correct. The AI helped speed up the initial translation, but a lot of work went in to refining the script.
