@@ -29,7 +29,7 @@ To solve this numerically, we switch to the variable $\tau = T - t$ so we can st
 For time stepping, we use the backward Euler method, which leads to linear systems of the form
 
 $$
-(I - \Delta t \, L) V^{n+1} = V^n
+(I - \Delta t L) V^{n+1} = V^n
 $$
 
 These systems are assembled as sparse matrices using `petsc4py`, and solved using PETSc’s KSP solver. In this case, LU factorization is used for a direct solve.
@@ -40,4 +40,10 @@ Overall, this project combines finite differences with PETSc to solve a common p
 
 ## AI Translation Experience
 
-While the AI provided a useful starting point, the script required significant debugging and modification. I had to fix syntax issues and ensure that the output was correct. The AI helped speed up the initial translation, but a lot of work went in to refining the script.
+While the AI provided a useful starting point, the script required significant debugging and modification. I had to fix syntax issues and ensure that the output was correct. The AI helped speed up the initial translation, but a lot of work went in to refining the script, expecially configuring the PETSc functions and ensuring correct matrix assembly.
+
+## How to Run
+1. Install necessary packages (if needed):
+   pip install petsc4py numpy matplotlib
+2. Run the module python tutorial_module.py or open the notebook tutorial_presentation.ipynb
+
