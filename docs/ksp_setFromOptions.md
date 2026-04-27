@@ -19,21 +19,8 @@ None
 Notes
 -----
 The corresponding PETSc C function is
-`KSPSetFromOptions(KSP ksp)`.
-
-Declared in
-    petsc/include/petscksp.h
-
-Implemented in
-    petsc/src/ksp/ksp/interface/itcl.c
-
-PETSc GitHub source
-    https://github.com/petsc/petsc/blob/main/src/ksp/ksp/interface/itcl.c
-
-In the Black–Scholes solver, this function is called after setting
-`"preonly"` and `"lu"` so that any external PETSc options (such as
-tolerances or monitors) can still be applied before solving each
-linear system.
+`KSPSetFromOptions`, for which more information can be found here:
+https://petsc.org/main/manualpages/KSP/KSPSetFromOptions/
 
 Examples
 --------
