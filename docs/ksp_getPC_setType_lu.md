@@ -59,12 +59,6 @@ def setType(self, pc_type):
     """
 ```
 
-## Role in this Project
-
-At each backward Euler time step, the Black-Scholes discretization produces a sparse linear system that must be solved numerically.
-
-The line `ksp.getPC().setType("lu")` retrieves the preconditioner attached to the KSP solver and sets it to LU factorization. Since the solver type is set to `preonly`, PETSc uses the LU factorization as a direct solver for the sparse linear systems.
-
 ## Source Mapping
 
 The `petsc4py` expression `ksp.getPC().setType("lu")` is implemented in two steps. First, `ksp.getPC()` is implemented in `petsc4py/src/PETSc/KSP.pyx` and calls `CHKERR(KSPGetPC(self.ksp, &pc))`, which wraps the PETSc C function `KSPGetPC(KSP ksp, PC *pc)`. Then, `pc.setType("lu")` is implemented in `petsc4py/src/PETSc/PC.pyx` and calls `CHKERR(PCSetType(self.pc, pc_type))`, which wraps the PETSc C function `PCSetType(PC pc, PCType type)`. These functions are declared in `petsc/include/petscksp.h` and `petsc/include/petscpc.h`, and implemented in `petsc/src/ksp/ksp/interface/itfunc.c` and `petsc/src/ksp/pc/interface/precon.c`.
