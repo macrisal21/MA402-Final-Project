@@ -58,15 +58,6 @@ def setFromOptions(self):
     """
 ```
 
-## Role in this Project
-The Black-Scholes PDE is discretized using finite differences and backward Euler time stepping. This creates sparse linear systems of the form
-
-$$
-(I-\Delta t L)V^{n+1}=V^n.
-$$
-
-The KSP solver is responsible for solving these systems. The call to `ksp.setFromOptions()` makes the solver setup more flexible by allowing external PETSc options to modify the solver behavior without changing the Python code.
-
 ## Source Mapping
 
 The `petsc4py` method `ksp.setFromOptions()` is implemented in `petsc4py/src/PETSc/KSP.pyx` as the Python method `setFromOptions()`. In the Cython wrapper, this method calls `CHKERR(KSPSetFromOptions(self.ksp))`, which directly wraps the PETSc C function `KSPSetFromOptions(KSP ksp)`. This function is declared in the PETSc header file `petsc/include/petscksp.h` and implemented in the source file `petsc/src/ksp/ksp/interface/itcl.c`.
